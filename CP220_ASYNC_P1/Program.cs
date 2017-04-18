@@ -18,7 +18,7 @@ namespace CP220_ASYNC_P1
             for (int i = 0; i < data.Length; i++)
             {
                 sw.Start();
-                data[i] = Fib(i);
+                data[i] = extender.Fib_MD(i);
                 sw.Stop();
                 time[i] = sw.Elapsed.TotalMilliseconds;
             }
@@ -27,19 +27,18 @@ namespace CP220_ASYNC_P1
                 Console.WriteLine("Fib(" + i + ") = " + data[i] + " in " + time[i] + " ms");
             }
             Console.ReadKey();
-        }
-        public static long Fib(int n)
-        {
-            int a = 0;
-            int b = 1;
-            // In N steps compute Fibonacci sequence iteratively.
-            for (int i = 0; i < n; i++)
+            Console.Clear();
+            Array.Clear(data, 0, data.Length);
+            Array.Clear(time, 0, time.Length);
+
+            sw.Start();
+            Parallel.For(0, data.Length, i => data[i] = work.Fib_DK(i));
+            sw.Stop();
+            for (int i = 0; i < data.Length; i++)
             {
-                int temp = a;
-                a = b;
-                b = temp + b;
+                Console.WriteLine("Fib(" + i + ") = " + data[i] + " in " + time[i] + " ms");
             }
-            return a;
+            Console.ReadKey();
         }
     }
 }
