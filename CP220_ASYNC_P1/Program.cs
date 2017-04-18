@@ -13,22 +13,15 @@ namespace CP220_ASYNC_P1
         static void Main(string[] args)
         {
             Stopwatch sw = new Stopwatch();
-            long[] data = new long[10];
-            long[] time = new long[10];
+            long[] data = new long[36];
+            long[] time = new long[36];
 
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < data.Length; i++)
             {
                 sw.Start();
-                if(sw.IsRunning == true)
-                {
-                    data[i] = Fib(i);
-                    sw.Stop();
-                    time[i] = sw.ElapsedMilliseconds;
-                }
-                else
-                {
-                    Console.WriteLine("Stopwatch Failed To Start");
-                }
+                data[i] = Fib(i);
+                sw.Stop();
+                time[i] = sw.ElapsedMilliseconds;
             }
 
             for(int i = 0; i < data.Length; i++)
@@ -42,11 +35,16 @@ namespace CP220_ASYNC_P1
         }
         public static long Fib(int n)
         {
-            if (n == 0 || n == 1)
+            int a = 0;
+            int b = 1;
+            // In N steps compute Fibonacci sequence iteratively.
+            for (int i = 0; i < n; i++)
             {
-                return n;
+                int temp = a;
+                a = b;
+                b = temp + b;
             }
-            return Fib(n - 2) + Fib(n - 1);
+            return a;
         }
     }
 }
