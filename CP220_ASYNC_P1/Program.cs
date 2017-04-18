@@ -14,22 +14,17 @@ namespace CP220_ASYNC_P1
         {
             Stopwatch sw = new Stopwatch();
             long[] data = new long[36];
-            long[] time = new long[36];
-
-            for(int i = 0; i < data.Length; i++)
+            double[] time = new double[36];
+            for (int i = 0; i < data.Length; i++)
             {
                 sw.Start();
                 data[i] = Fib(i);
                 sw.Stop();
-                time[i] = sw.ElapsedMilliseconds;
+                time[i] = sw.Elapsed.TotalMilliseconds;
             }
-
-            for(int i = 0; i < data.Length; i++)
+            for (int i = 0; i < data.Length; i++)
             {
-                for(int j = 0; i < time.Length; i++)
-                {
-                    Console.WriteLine("Fib(" + i + ") = " + data[i] + " in " + time[j] + " ms");
-                }
+                Console.WriteLine("Fib(" + i + ") = " + data[i] + " in " + time[i] + " ms");
             }
             Console.ReadKey();
         }
