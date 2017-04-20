@@ -1,22 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CP220_ASYNC_P2
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Console.WriteLine("Peasent Simulator 2017");
+            Console.WriteLine("Press Any Key");
+            Console.ReadKey();
+            StartAsync();
+            Console.ReadKey();
+        }
+
+        public static async void StartAsync()
+        {
+            await Task.Run(() =>
+            {
+                Peasent P1 = new Peasent("Mikhail");
+                Task NewThread = P1.LifeTask();
+                Peasent P2 = new Peasent("Melina");
+                Task NewThread_1 = P2.LifeTask();
+            });
         }
     }
 }
