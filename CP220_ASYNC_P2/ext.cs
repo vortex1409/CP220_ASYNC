@@ -22,7 +22,7 @@ namespace CP220_ASYNC_P2
         public Peasent(string name)
         {
             _name = name;
-            Console.WriteLine("Peasent " + _name + "was born.");
+            Console.WriteLine("Peasent " + _name + " was born.");
             _lifetime.Start();
             Random RDN = new Random();
             _eventOccurance = RDN.NextDouble() * (2.0 - 0.5) + 0.5;

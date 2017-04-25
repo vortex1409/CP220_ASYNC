@@ -42,7 +42,7 @@ namespace CP220_ASYNC_P2_UI
         {
             _name = name;
             _ListBoxOutput = PLISTBOX;
-            _ListBoxOutput.Items.Add("Peasent " + _name + "was born.");
+            _ListBoxOutput.Items.Add("Peasent " + _name + " was born.");
             _lifetime.Start();
             _eventOccurance = (int)RN_OCCUR.NextDouble() * (2000 - 500) + 500;
         }
@@ -51,20 +51,28 @@ namespace CP220_ASYNC_P2_UI
         public async Task LifeTask()
         {
             Form1 containingForm = (Form1)_ListBoxOutput.FindForm();
-            await Task.Run(() =>
+            while (_lifetime.ElapsedMilliseconds <= 15000)
             {
-                string[] events = new string[5] { "Working", "Protecting", "Running", "Eating", "Sleeping" };
-                Random wEvent = new Random();
-                _eventOccurance *= 1000;
-                int occurance = (int)_eventOccurance;
-                while (_lifetime.ElapsedMilliseconds <= 5000)
-                {
-                    string event_string = events[wEvent.Next(0, 4)];
-                    Thread.Sleep(occurance);
-                    Console.WriteLine(_name + " @ " + "Age: " + _lifetime.ElapsedMilliseconds + " Event: " + event_string);
-                }
-                containingForm.AddItem(_ListBoxOutput, _name + " is dead " + " @ " + _lifetime.ElapsedMilliseconds + " ms");
-            });
+                Thread.Sleep(_eventOccurance);
+                string Event_Output = await Task.Run(() => EventBuilder());
+                containingForm.AddItem(_ListBoxOutput, Event_Output);
+            }
+            containingForm.AddItem(_ListBoxOutput, _name + " died @ " + _lifetime.ElapsedMilliseconds + "ms");
+        }
+
+        public string EventBuilder()
+        {
+            string[] events = new string[5]
+            {
+                "Working",
+                "Protecting",
+                "Running",
+                "Eating",
+                "Sleeping"
+            };
+            string output;
+            int RN = RN_OCCUR.Next(0, events.Length);
+            return output = events[RN] + " Event: " + _lifetime.ElapsedMilliseconds + " ms";
         }
 
     }

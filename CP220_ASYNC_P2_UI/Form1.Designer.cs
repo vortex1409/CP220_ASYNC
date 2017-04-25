@@ -37,9 +37,9 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(12, 204);
+            this.btnStart.Location = new System.Drawing.Point(536, 165);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(444, 23);
+            this.btnStart.Size = new System.Drawing.Size(263, 147);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start Simulation";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -50,21 +50,21 @@
             this.P1_OUTPUT.FormattingEnabled = true;
             this.P1_OUTPUT.Location = new System.Drawing.Point(12, 12);
             this.P1_OUTPUT.Name = "P1_OUTPUT";
-            this.P1_OUTPUT.Size = new System.Drawing.Size(219, 147);
+            this.P1_OUTPUT.Size = new System.Drawing.Size(518, 147);
             this.P1_OUTPUT.TabIndex = 1;
             // 
             // P2_OUTPUT
             // 
             this.P2_OUTPUT.FormattingEnabled = true;
-            this.P2_OUTPUT.Location = new System.Drawing.Point(237, 12);
+            this.P2_OUTPUT.Location = new System.Drawing.Point(12, 165);
             this.P2_OUTPUT.Name = "P2_OUTPUT";
-            this.P2_OUTPUT.Size = new System.Drawing.Size(219, 147);
+            this.P2_OUTPUT.Size = new System.Drawing.Size(518, 147);
             this.P2_OUTPUT.TabIndex = 2;
             // 
             // SimStatus
             // 
             this.SimStatus.AutoSize = true;
-            this.SimStatus.Location = new System.Drawing.Point(189, 162);
+            this.SimStatus.Location = new System.Drawing.Point(618, 44);
             this.SimStatus.Name = "SimStatus";
             this.SimStatus.Size = new System.Drawing.Size(88, 13);
             this.SimStatus.TabIndex = 3;
@@ -72,17 +72,17 @@
             // 
             // txtSimStatus
             // 
-            this.txtSimStatus.Location = new System.Drawing.Point(177, 178);
+            this.txtSimStatus.Location = new System.Drawing.Point(572, 83);
             this.txtSimStatus.Name = "txtSimStatus";
             this.txtSimStatus.ReadOnly = true;
-            this.txtSimStatus.Size = new System.Drawing.Size(100, 20);
+            this.txtSimStatus.Size = new System.Drawing.Size(185, 20);
             this.txtSimStatus.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 245);
+            this.ClientSize = new System.Drawing.Size(811, 324);
             this.Controls.Add(this.txtSimStatus);
             this.Controls.Add(this.SimStatus);
             this.Controls.Add(this.P2_OUTPUT);
