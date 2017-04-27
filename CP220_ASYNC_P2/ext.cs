@@ -6,6 +6,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
+/*
+    Project: Assignment 4 - Peasent Simulator 2017
+    Class: CP220 - OOP II
+    Destription: Multithreading Console Application
+    Name: Michael Dorfman
+    Date: 04/27/2017
+*/
+
 namespace CP220_ASYNC_P2
 {
     public class Peasent
@@ -14,9 +22,6 @@ namespace CP220_ASYNC_P2
         private string _name;
         private Stopwatch _lifetime = new Stopwatch();
         private double _eventOccurance;
-
-        //Properties
-
 
         //Constructor
         public Peasent(string name)
@@ -33,11 +38,14 @@ namespace CP220_ASYNC_P2
         {
             await Task.Run(() =>
             {
+                //Event Strings (Actions Peasents Do)
                 string[] events = new string[5] { "Working", "Protecting", "Running", "Eating", "Sleeping" };
+
                 Random wEvent = new Random();
                 _eventOccurance *= 1000;
                 int occurance = (int)_eventOccurance;
-                while(_lifetime.ElapsedMilliseconds <= 5000)
+
+                while (_lifetime.ElapsedMilliseconds <= 15000)
                 {
                     string event_string = events[wEvent.Next(0, 4)];
                     Thread.Sleep(occurance);

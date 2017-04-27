@@ -37,12 +37,14 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(536, 165);
+            this.btnStart.BackColor = System.Drawing.Color.Lime;
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Location = new System.Drawing.Point(536, 65);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(263, 147);
+            this.btnStart.Size = new System.Drawing.Size(263, 247);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Start Simulation";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Text = "START SIMULATION";
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // P1_OUTPUT
@@ -63,20 +65,22 @@
             // 
             // SimStatus
             // 
-            this.SimStatus.AutoSize = true;
-            this.SimStatus.Location = new System.Drawing.Point(618, 44);
+            this.SimStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SimStatus.Location = new System.Drawing.Point(536, 12);
             this.SimStatus.Name = "SimStatus";
-            this.SimStatus.Size = new System.Drawing.Size(88, 13);
+            this.SimStatus.Size = new System.Drawing.Size(263, 24);
             this.SimStatus.TabIndex = 3;
-            this.SimStatus.Text = "Simulation Status";
+            this.SimStatus.Text = "SIMULATION STATUS";
+            this.SimStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtSimStatus
             // 
-            this.txtSimStatus.Location = new System.Drawing.Point(572, 83);
+            this.txtSimStatus.Location = new System.Drawing.Point(536, 39);
             this.txtSimStatus.Name = "txtSimStatus";
             this.txtSimStatus.ReadOnly = true;
-            this.txtSimStatus.Size = new System.Drawing.Size(185, 20);
+            this.txtSimStatus.Size = new System.Drawing.Size(263, 20);
             this.txtSimStatus.TabIndex = 4;
+            this.txtSimStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 

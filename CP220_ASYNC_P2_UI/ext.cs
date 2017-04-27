@@ -10,6 +10,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
+/*
+    Project: Assignment 4 - Peasent Simulator 2017
+    Class: CP220 - OOP II
+    Destription: Multithreading with Form Manipulation
+    Name: Michael Dorfman
+    Date: 04/27/2017
+*/
+
 namespace CP220_ASYNC_P2_UI
 {
     public class Peasent
@@ -62,6 +70,7 @@ namespace CP220_ASYNC_P2_UI
 
         public string EventBuilder()
         {
+            //Constructs Events based on Random Number (Actions the Peasents Do)
             string[] events = new string[5]
             {
                 "Working",
@@ -70,9 +79,8 @@ namespace CP220_ASYNC_P2_UI
                 "Eating",
                 "Sleeping"
             };
-            string output;
             int RN = RN_OCCUR.Next(0, events.Length);
-            return output = events[RN] + " Event: " + _lifetime.ElapsedMilliseconds + " ms";
+            return events[RN] + " Event: " + _lifetime.ElapsedMilliseconds + " ms";
         }
 
     }
